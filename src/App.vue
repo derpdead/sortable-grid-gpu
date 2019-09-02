@@ -3,7 +3,6 @@
     <div class="page-wrapper">
         <Grid
             :columns="columns"
-            @removeColumn="onRemoveColumnAtIndex"
             @swapColumns="onSwapColumns" />
     </div>
   </div>
@@ -24,9 +23,6 @@ export default {
     };
   },
   methods: {
-    onRemoveColumnAtIndex(index) {
-      this.columns.splice(index, 1);
-    },
     onSwapColumns({ from, to }) {
       this.columns = swapItemPosition(this.columns, from, to);
     },
