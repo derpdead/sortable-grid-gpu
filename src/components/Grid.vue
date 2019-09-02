@@ -7,7 +7,6 @@
             :dragged-index="draggedIndex"
             :fixed-dragged-index="fixedDraggedIndex"
             :column="column"
-            @removeColumn="onRemoveColumn"
             @swapColumns="onSwapColumns"
             @draggedIndex="onDraggedIndex"
             @fixedDraggedIndex="onFixedDraggedIndex" />
@@ -33,9 +32,6 @@ export default {
     };
   },
   methods: {
-    onRemoveColumn(index) {
-      this.$emit('removeColumn', index);
-    },
     onSwapColumns({ from, to }) {
       this.$emit('swapColumns', { from, to });
     },
